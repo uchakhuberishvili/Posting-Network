@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posting Network</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #445980, #749fe4);
+            font-family: sans-serif;
+            margin: 20px;
+        }
+        form {
+            background: linear-gradient(to right, #5c8aa0, #0169a5);
+            margin-bottom: 20px;
+            border: 5px solid #050404;
+            padding: 50px;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="password"],
+        textarea {
+            background: linear-gradient(to right, #94b9ff, #4582e6);
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 3px solid #000000;
+            border-radius: 4px;
+        }
+        textarea {
+            resize: vertical; 
+        }
+        input[type="submit"],
+        button {
+            background: linear-gradient(to right,rgb(18, 81, 197)0, #012257);
+            color: white;
+            padding: 10px 15px;
+            border: 2px solid black;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button {
+            background-color: #860900; 
+        }
+        button:hover,
+        input[type="submit"]:hover {
+            opacity: 0.8;
+        }
+        #auth-message {
+            margin-top: 10px;
+            color: red; 
+        }
+        #posts {
+            margin-top: 30px;
+        }
+        #posts div {
+            background: linear-gradient(to right, #5c8aa0, #0169a5);
+            margin-bottom: 20px;
+            border: 5px solid #000000;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        #public-posts h2, #private-posts h2 {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <span id="auth-message"></span>
+    <form id="register-form">
+        <label for="register-username">Username:</label>
+        <input type="text" id="register-username" name="username"><br><br>
+        <label for="register-password">Password:</label>
+        <input type="password" id="register-password" name="password"><br><br>
+        <input type="submit" value="Register">
+    </form>
+    <form id="login-form">
+        <label for="login-username">Username:</label>
+        <input type="text" id="login-username" name="username"><br><br>
+        <label for="login-password">Password:</label>
+        <input type="password" id="login-password" name="password"><br><br>
+        <input type="submit" value="Login">
+    </form>
+    <button id="logout-button" style="display:none;">Logout</button>
+    <form id="post-form" style="display:none;">
+        <label for="post-title">Title:</label>
+        <input type="text" id="post-title" name="title"><br><br>
+        <label for="post-body">Body:</label>
+        <textarea id="post-body" name="body"></textarea><br><br>
+        <label for="post-private">Private:</label>
+        <input type="checkbox" id="post-private" name="private"><br><br>
+        <input type="submit" value="Create Post">
+    </form>
+    <div id="posts">
+        <div id="public-posts">
+            <h2>Public Posts:</h2>
+        </div>
+        <div id="private-posts">
+            <h2>Private Posts:</h2>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
